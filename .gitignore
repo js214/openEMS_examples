@@ -1,0 +1,12 @@
+fp-info-cache
+*-backups
+*.swp
+*.lck
+*.prl
+
+*.gbr
+*.drl
+*.gbrjob
+*.csv
+
+ems
