@@ -3,15 +3,6 @@
 This repository contains simple examples of simulations of RF signal propagation
 in microstrip and related transmission lines.
 
-The simulations are done in [openEMS](https://www.openems.de/)
-([Github page](https://github.com/thliebig/openEMS)). The geometry is prepared
-in [KiCad](https://www.kicad.org/) and converted to the form needed by openEMS
-by [gerber2ems](https://github.com/antmicro/gerber2ems)
-([quick tutorial](https://nuclearrambo.com/wordpress/gerber2ems-a-short-tutorial-to-simulate-your-pcbs-in-openems/)).
-After the simulation has finished, the fields can be viewed in
-[ParaView](https://www.paraview.org/). I used Python version 3.10 set up as an
-Anaconda environment.
-
 ![example](example.gif)
 
 ### Repository contents
@@ -33,11 +24,43 @@ Anaconda environment.
 - `cpw_wide`: CPW on a wide PCB, to be able to see the waves launched
   away from the trace
 
-- `cpw_vias_fast`: CPW with vias, but tune mesh size for faster simulation
+### Prerequisites
 
-### Getting started
+The simulations are done in [openEMS](https://www.openems.de/)
+([Github page](https://github.com/thliebig/openEMS)). The geometry is prepared
+in [KiCad](https://www.kicad.org/) and converted to the form needed by openEMS
+by [gerber2ems](https://github.com/antmicro/gerber2ems)
+([quick tutorial](https://nuclearrambo.com/wordpress/gerber2ems-a-short-tutorial-to-simulate-your-pcbs-in-openems/)).
+After the simulation has finished, the fields can be viewed in
+[ParaView](https://www.paraview.org/). I used Python version 3.10 set up as an
+Anaconda environment.
 
-1. Go into one of the example folders, such as `microstrip` and open the KiCad
+1. Create a new Anaconda environment:
+
+       $ conda create -n test python=3.10
+       $ conda activate test
+
+   Replace `test` with any desired environment name.
+
+2. Obtain `gerber2ems` and install it:
+
+       $ git clone git@github.com:antmicro/gerber2ems.git
+       $ cd gerber2ems
+       $ pip install .
+
+3. Download openEMS and install the Python interface:
+
+       $ cd C:\openEMS\python
+       $ pip install CSXCAD-0.6.3-cp310-cp310-win_amd64.whl
+       $ pip install openEMS-0.0.36-cp310-cp310-win_amd64.whl
+
+4. Install `h5py`:
+
+       $ pip install h5py
+
+### Getting started with the simulation
+
+1. Go into one of the example folders, such as `microstrip`, and open the KiCad
    project (`basic.kicad_pro`).
 
 2. In KiCad, open the PCB Editor and go to File → Plot. Make sure the Output
