@@ -28,6 +28,8 @@ Anaconda environment.
 - `cpw_more_vias`: simple coplanar waveguide, with via fence around the trace,
   as well as vias in the rest of the ground pour
 
+- `cpw_fewer_vias`: CPW with only a couple vias around the trace
+
 ### Getting started
 
 1. Go into one of the example folders, such as `microstrip` and open the KiCad
