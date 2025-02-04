@@ -30,6 +30,11 @@ Anaconda environment.
 
 - `cpw_fewer_vias`: CPW with only a couple vias around the trace
 
+- `cpw_wide`: CPW on a wide PCB, to be able to see the waves launched
+  away from the trace
+
+- `cpw_vias_fast`: CPW with vias, but tune mesh size for faster simulation
+
 ### Getting started
 
 1. Go into one of the example folders, such as `microstrip` and open the KiCad
